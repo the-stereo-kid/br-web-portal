@@ -102,39 +102,47 @@
       <!-- Mobile Menu -->
       <div
         v-if="mobileMenuOpen"
-        class="md:hidden pb-4 space-y-3"
-        :class="isScrolled ? 'bg-white' : 'bg-black bg-opacity-90'"
+        class="md:hidden absolute top-full left-4 right-4 mt-2 rounded-2xl shadow-xl overflow-hidden backdrop-blur-lg"
+        :class="isScrolled ? 'bg-white/95' : 'bg-stone-900/95'"
       >
-        <a
-          v-for="link in navLinks"
-          :key="link.href"
-          :href="link.href"
-          @click.prevent="scrollToSection(link.href); mobileMenuOpen = false"
-          :class="[
-            'block text-sm font-semibold uppercase tracking-wide py-2 transition-colors',
-            isScrolled ? 'text-stone-800 hover:text-amber-600' : 'text-white hover:text-amber-300'
-          ]"
-        >
-          {{ link.label }}
-        </a>
-        <a
-          href="https://chat.whatsapp.com/I8Ca17ugAqcClOyxCjJGMa"
-          target="_blank"
-          rel="noopener noreferrer"
-          @click="mobileMenuOpen = false"
-          :class="[
-            'block text-sm font-semibold uppercase tracking-wide py-2 transition-colors',
-            isScrolled ? 'text-stone-800 hover:text-amber-600' : 'text-white hover:text-amber-300'
-          ]"
-        >
-          WhatsApp Community
-        </a>
-        <button
-          @click="scrollToSection('#5'); mobileMenuOpen = false"
-          class="w-full px-4 py-2 bg-amber-600 text-white font-semibold uppercase text-sm tracking-wide rounded hover:bg-amber-700 transition-colors"
-        >
-          Contact
-        </button>
+        <div class="px-6 py-6 space-y-1">
+          <a
+            v-for="link in navLinks"
+            :key="link.href"
+            :href="link.href"
+            @click.prevent="scrollToSection(link.href); mobileMenuOpen = false"
+            :class="[
+              'block text-sm font-semibold uppercase tracking-wide py-3 px-4 rounded-lg transition-all duration-200',
+              isScrolled 
+                ? 'text-stone-800 hover:bg-amber-50 hover:text-amber-600' 
+                : 'text-white hover:bg-white/10 hover:text-amber-300'
+            ]"
+          >
+            {{ link.label }}
+          </a>
+          <a
+            href="https://chat.whatsapp.com/I8Ca17ugAqcClOyxCjJGMa"
+            target="_blank"
+            rel="noopener noreferrer"
+            @click="mobileMenuOpen = false"
+            :class="[
+              'block text-sm font-semibold uppercase tracking-wide py-3 px-4 rounded-lg transition-all duration-200',
+              isScrolled 
+                ? 'text-stone-800 hover:bg-amber-50 hover:text-amber-600' 
+                : 'text-white hover:bg-white/10 hover:text-amber-300'
+            ]"
+          >
+            WhatsApp Community
+          </a>
+          <div class="pt-2">
+            <button
+              @click="scrollToSection('#5'); mobileMenuOpen = false"
+              class="w-full px-4 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold uppercase text-sm tracking-wide rounded-lg hover:from-amber-600 hover:to-amber-700 transition-all duration-200 shadow-md hover:shadow-lg"
+            >
+              Contact
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
