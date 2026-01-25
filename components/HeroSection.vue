@@ -37,12 +37,22 @@
 
       <!-- Main Title -->
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-4">
-        Brothers Rising
+        As Brothers, We Rise
       </h1>
 
       <!-- Tagline -->
-      <p class="text-lg sm:text-xl md:text-2xl text-white mb-8 font-light">
-        Creating A Community Of Strong, Healthy & Happy Men
+      <p class="text-lg sm:text-xl md:text-2xl text-white mb-6 font-light max-w-3xl mx-auto">
+        Building stronger, healthier, and more emotionally resilient men through the power of brotherhood, presence, and conscious connection.
+      </p>
+
+      <!-- Description -->
+      <p class="text-base sm:text-lg md:text-xl text-white mb-4 font-light max-w-3xl mx-auto leading-relaxed">
+        Brothers Rising is a South African men's wellbeing community dedicated to helping men reconnect with themselves, with other men, and with life itself. We create grounded, intentional spaces where men are supported to show up honestly, grow consciously, and rise together.
+      </p>
+
+      <!-- Closing Line -->
+      <p class="text-lg sm:text-xl md:text-2xl text-white mb-8 font-serif italic">
+        Join us as a stranger. Leave as a brother.
       </p>
 
       <!-- CTA Button -->

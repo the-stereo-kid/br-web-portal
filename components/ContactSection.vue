@@ -5,8 +5,11 @@
         <!-- Heading -->
         <div class="text-center mb-12">
           <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-            Keen to Connect? Reach Out!
+            Contact
           </h2>
+          <p class="text-lg sm:text-xl text-white mb-6">
+            If you'd like to learn more or get involved, we'd love to hear from you.
+          </p>
           <a
             href="https://calendly.com/brothersrisingsa/30min"
             target="_blank"
@@ -20,31 +23,6 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <!-- Contact Information -->
           <div class="space-y-6">
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-6 h-6 text-white mt-1">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-              </div>
-              <p class="text-white text-lg">
-                6th Floor, The Barracks, 50 Bree St, Cape Town City Centre, Cape Town, 8000
-              </p>
-            </div>
 
             <div class="flex items-start space-x-4">
               <div class="flex-shrink-0 w-6 h-6 text-white mt-1">

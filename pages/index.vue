@@ -4,6 +4,8 @@
     <HeroSection />
     <OfferingsSection />
     <AboutSection />
+    <WhoThisIsForSection />
+    <OurInvitationSection />
     <NewsletterSection />
     <ContactSection />
     <Footer />

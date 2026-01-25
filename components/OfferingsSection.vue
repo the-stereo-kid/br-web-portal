@@ -4,16 +4,16 @@
       <!-- Main Heading -->
       <div class="text-center mb-12 md:mb-16">
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-stone-800 mb-4">
-          Helping Men Rise To Their Full Potential
+          What We Do
         </h2>
-        <p class="text-xl sm:text-2xl text-stone-600 font-serif">
-          Wholeness For The Modern Man
+        <p class="text-xl sm:text-2xl text-stone-600 font-serif max-w-3xl mx-auto">
+          Brothers Rising offers a range of experiences designed to support men across emotional, mental, physical, and spiritual dimensions of wellbeing. All our offerings are guided, confidential, and rooted in respect and intentionality.
         </p>
       </div>
 
       <!-- Offerings Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-        <!-- Community & Circles -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <!-- Community Gatherings -->
         <div class="text-center">
           <div class="mb-6 flex justify-center">
             <div class="w-20 h-20 flex items-center justify-center text-amber-600">
@@ -32,18 +32,27 @@
               </svg>
             </div>
           </div>
-          <h3 class="text-2xl font-serif font-bold text-stone-800 mb-2">
-            Community & Circles
+          <h3 class="text-2xl font-serif font-bold text-stone-800 mb-4">
+            Community Gatherings
           </h3>
-          <h4 class="text-lg font-semibold text-amber-600 mb-4">
-            Connect Through Brotherhood
-          </h4>
-          <p class="text-stone-600 leading-relaxed">
-            Regular group meetings where men can connect, share, support, and learn from each other in a safe, interactive and confidential environment.
+          <p class="text-stone-600 leading-relaxed mb-4">
+            Our regular men's circles and gatherings create a consistent space for connection, reflection, and shared growth.
+          </p>
+          <p class="text-stone-600 leading-relaxed mb-2 text-left">
+            In these circles, men are invited to:
+          </p>
+          <ul class="list-disc list-inside text-stone-600 leading-relaxed space-y-2 text-left ml-4">
+            <li>Speak honestly about what is present in their lives</li>
+            <li>Be witnessed without advice, fixing, or judgement</li>
+            <li>Listen deeply to the experiences of other men</li>
+            <li>Build trust, emotional literacy, and brotherhood over time</li>
+          </ul>
+          <p class="text-stone-600 leading-relaxed mt-4 italic">
+            These gatherings form the backbone of Brothers Rising — a place to return to, again and again.
           </p>
         </div>
 
-        <!-- Gatherings & Events -->
+        <!-- Immersive Workshops -->
         <div class="text-center">
           <div class="mb-6 flex justify-center">
             <div class="w-20 h-20 flex items-center justify-center text-amber-600">
@@ -57,23 +66,33 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                 />
               </svg>
             </div>
           </div>
-          <h3 class="text-2xl font-serif font-bold text-stone-800 mb-2">
-            Gatherings & Events
+          <h3 class="text-2xl font-serif font-bold text-stone-800 mb-4">
+            Immersive Workshops
           </h3>
-          <h4 class="text-lg font-semibold text-amber-600 mb-4">
-            Expand Your Horizons
-          </h4>
-          <p class="text-stone-600 leading-relaxed">
-            We host a variety of workshops, events and retreats throughout the year to foster connection, self discovery, growth, learning, and connection. These include both free community gatherings as well as paid events.
+          <p class="text-stone-600 leading-relaxed mb-4">
+            Our workshops are structured experiences focused on self‑inquiry, emotional awareness, and practical tools for everyday life.
+          </p>
+          <p class="text-stone-600 leading-relaxed mb-2 text-left">
+            Depending on the theme, workshops may explore:
+          </p>
+          <ul class="list-disc list-inside text-stone-600 leading-relaxed space-y-2 text-left ml-4">
+            <li>Emotional intelligence and regulation</li>
+            <li>Masculine identity and healthy expression</li>
+            <li>Relationships, communication, and boundaries</li>
+            <li>Purpose, values, and life direction</li>
+            <li>Somatic practices, breathwork, or guided reflection</li>
+          </ul>
+          <p class="text-stone-600 leading-relaxed mt-4">
+            Workshops offer men the opportunity to go deeper, gain insight, and leave with tangible practices they can integrate into daily life.
           </p>
         </div>
 
-        <!-- Coaching & Corporate -->
+        <!-- Private Coaching -->
         <div class="text-center">
           <div class="mb-6 flex justify-center">
             <div class="w-20 h-20 flex items-center justify-center text-amber-600">
@@ -92,14 +111,62 @@
               </svg>
             </div>
           </div>
-          <h3 class="text-2xl font-serif font-bold text-stone-800 mb-2">
-            Coaching & Corporate
+          <h3 class="text-2xl font-serif font-bold text-stone-800 mb-4">
+            Private Coaching
           </h3>
-          <h4 class="text-lg font-semibold text-amber-600 mb-4">
-            Rise Into Your Full Potential
-          </h4>
-          <p class="text-stone-600 leading-relaxed">
-            Many men face pressure to suppress stress, avoid vulnerability, and silently carry the weight of responsibility—leading to burnout, disengagement, and poor communication. Prioritising men's mental wellness creates stronger, more resilient leaders, improves focus and morale, reduces absenteeism, and fosters a culture of trust and connection.
+          <p class="text-stone-600 leading-relaxed mb-4">
+            For men seeking more personalised support, we offer one‑on‑one coaching and guided processes.
+          </p>
+          <p class="text-stone-600 leading-relaxed mb-2 text-left">
+            These sessions provide a confidential, supportive container to:
+          </p>
+          <ul class="list-disc list-inside text-stone-600 leading-relaxed space-y-2 text-left ml-4">
+            <li>Navigate life transitions or challenges</li>
+            <li>Develop clarity around goals and direction</li>
+            <li>Work through emotional blocks or patterns</li>
+            <li>Cultivate healthier habits and self‑leadership</li>
+          </ul>
+          <p class="text-stone-600 leading-relaxed mt-4">
+            Coaching is practical, grounded, and tailored to the individual — meeting each man where he is.
+          </p>
+        </div>
+
+        <!-- Elemental Retreats -->
+        <div class="text-center">
+          <div class="mb-6 flex justify-center">
+            <div class="w-20 h-20 flex items-center justify-center text-amber-600">
+              <svg
+                class="w-full h-full"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                />
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-2xl font-serif font-bold text-stone-800 mb-4">
+            Elemental Retreats
+          </h3>
+          <p class="text-stone-600 leading-relaxed mb-4">
+            Our retreats are immersive, multi‑day experiences held in nature, designed to facilitate deep connection, reflection, and renewal.
+          </p>
+          <p class="text-stone-600 leading-relaxed mb-2 text-left">
+            Stepping away from daily distractions allows men to:
+          </p>
+          <ul class="list-disc list-inside text-stone-600 leading-relaxed space-y-2 text-left ml-4">
+            <li>Reconnect with themselves and the natural world</li>
+            <li>Build strong bonds with other men</li>
+            <li>Explore inner landscapes with skilled facilitation</li>
+            <li>Rest, reset, and return with renewed clarity and strength</li>
+          </ul>
+          <p class="text-stone-600 leading-relaxed mt-4">
+            Retreats often incorporate ritual, movement, reflection, and shared experience — creating space for meaningful transformation.
           </p>
         </div>
       </div>

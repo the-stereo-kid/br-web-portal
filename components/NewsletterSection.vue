@@ -25,10 +25,16 @@
           <!-- Right: Form -->
           <div>
             <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-stone-800 mb-4">
-              Men Healing. Men Growing. Men Rising
+              Stay Connected
             </h2>
-            <p class="text-lg sm:text-xl text-stone-600 mb-8 font-serif">
-              Through Strong Roots, Steady Hearts & Clear Minds. Sign Up Below To Get Access To Our Monthly Newsletter.
+            <p class="text-lg sm:text-xl text-stone-600 mb-4 font-serif">
+              Stay present. Get connected.
+            </p>
+            <p class="text-lg sm:text-xl text-stone-600 mb-8">
+              Follow Brothers Rising to stay informed about upcoming gatherings, workshops, retreats, and community offerings.
+            </p>
+            <p class="text-lg sm:text-xl text-stone-600 mb-8 italic">
+              Whether you're curious, cautious, or fully ready to step in — there is a place for you here.
             </p>
 
             <form @submit.prevent="handleSubmit" class="space-y-4">
