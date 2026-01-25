@@ -18,14 +18,32 @@
     <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
       <!-- Logo -->
       <div class="mb-4 sm:mb-6 flex justify-center">
-        <!-- Logo with thin golden brown border and background -->
-        <div class="p-3 sm:p-4 md:p-5 lg:p-6 border-[1.5px] border-golden-brown rounded-full bg-black bg-opacity-60 backdrop-blur-sm shadow-2xl">
+        <!-- OPTION 1: Light background (uplifting, conscious community feel) - CURRENT -->
+        <div class="p-3 sm:p-4 md:p-5 lg:p-6 border-[2px] border-golden-brown rounded-full bg-white bg-opacity-80 backdrop-blur-sm shadow-2xl">
           <img
             :src="logoImage"
             alt="Brothers Rising Logo"
             class="h-20 sm:h-28 md:h-36 lg:h-44 xl:h-52 w-auto object-contain drop-shadow-lg"
           />
         </div>
+        
+        <!-- OPTION 2: Dark background (dramatic, grounded feel) -->
+        <!-- <div class="p-3 sm:p-4 md:p-5 lg:p-6 border-[1.5px] border-golden-brown rounded-full bg-black bg-opacity-60 backdrop-blur-sm shadow-2xl">
+          <img
+            :src="logoImage"
+            alt="Brothers Rising Logo"
+            class="h-20 sm:h-28 md:h-36 lg:h-44 xl:h-52 w-auto object-contain drop-shadow-lg"
+          />
+        </div> -->
+        
+        <!-- OPTION 3: Transparent/no background (minimal, clean feel) -->
+        <!-- <div class="p-3 sm:p-4 md:p-5 lg:p-6 border-[1.5px] border-golden-brown rounded-full shadow-2xl">
+          <img
+            :src="logoImage"
+            alt="Brothers Rising Logo"
+            class="h-20 sm:h-28 md:h-36 lg:h-44 xl:h-52 w-auto object-contain drop-shadow-lg"
+          />
+        </div> -->
       </div>
 
       <!-- Main Title -->
