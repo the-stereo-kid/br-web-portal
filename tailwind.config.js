@@ -23,7 +23,9 @@ export default {
           700: '#b45309',
           800: '#92400e',
           900: '#78350f'
-        }
+        },
+        // Golden brown to match logo
+        'golden-brown': '#AD8330'
       },
       fontFamily: {
         // Serif for headings, sans-serif for body
