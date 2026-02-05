@@ -6,7 +6,6 @@
     <AboutSection />
     <WhoThisIsForSection />
     <OurInvitationSection />
-    <NewsletterSection />
     <ContactSection />
     <Footer />
   </div>

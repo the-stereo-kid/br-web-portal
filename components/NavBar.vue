@@ -55,7 +55,7 @@
             WhatsApp Community
           </a>
           <button
-            @click="scrollToSection('#5')"
+            @click="scrollToSection('#contact')"
             class="px-4 py-2 bg-amber-600 text-white font-semibold uppercase text-sm tracking-wide rounded hover:bg-amber-700 transition-colors"
           >
             Contact
@@ -136,7 +136,7 @@
           </a>
           <div class="pt-2">
             <button
-              @click="scrollToSection('#5'); mobileMenuOpen = false"
+              @click="scrollToSection('#contact'); mobileMenuOpen = false"
               class="w-full px-4 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold uppercase text-sm tracking-wide rounded-lg hover:from-amber-600 hover:to-amber-700 transition-all duration-200 shadow-md hover:shadow-lg"
             >
               Contact
@@ -155,8 +155,7 @@ const mobileMenuOpen = ref(false)
 const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'Offerings', href: '#offerings' },
-  { label: 'About', href: '#about' },
-  { label: 'Sign Up', href: '#sign-up' }
+  { label: 'About', href: '#about' }
 ]
 
 const scrollToSection = (href: string) => {

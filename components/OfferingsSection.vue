@@ -104,15 +104,26 @@
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <!-- Compass: guidance and direction -->
+                <!-- Compass: circle, cardinal markers, pinched needle + midline -->
                 <circle cx="12" cy="12" r="9" stroke-width="1.25" />
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="1.25"
-                  d="M12 4v16M8 12h8"
+                  d="M12 3v2.5M21 12h-2.5M12 21v-2.5M3 12h2.5"
                 />
-                <circle cx="12" cy="12" r="1.5" stroke-width="1.25" />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.25"
+                  d="M10.5 10.5L15 9L13.5 13.5L9 15z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.25"
+                  d="M10.5 10.5L13.5 13.5"
+                />
               </svg>
             </div>
           </div>
@@ -146,18 +157,30 @@
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <!-- Tent: retreat in nature -->
+                <!-- Tent: A-frame with crossed poles, eaves, entrance (three paths, no top connector) -->
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  stroke-width="1.25"
-                  d="M5 20L12 4l7 16H5z"
+                  stroke-width="1"
+                  d="M15 4L2.5 21L4 20"
                 />
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  stroke-width="1.25"
-                  d="M12 4v16"
+                  stroke-width="1"
+                  d="M9 4L21.5 21L20 20"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M4 20h16"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M10 20l2-5 2 5z"
                 />
               </svg>
             </div>
