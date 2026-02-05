@@ -28,7 +28,7 @@
             Talk to us
           </h3>
           <p class="text-stone-600 mb-4">
-            Book a free 30-minute 1‑to‑1 discovery call to explore how Brothers Rising might support you.
+            Book a 30 minute call for support, discovery or get hold of us on these contact details.
           </p>
           <a
             href="https://calendly.com/brothersrisingsa/30min"
@@ -36,11 +36,20 @@
             rel="noopener noreferrer"
             class="inline-block px-5 py-2.5 bg-amber-600 text-white font-semibold text-sm tracking-wide rounded hover:bg-amber-700 transition-colors mb-6"
           >
-            Book a 1‑to‑1 discovery call
+            Book a 30 minute call
           </a>
           <div class="space-y-2 text-stone-700">
             <p>
+              <span class="font-medium text-stone-800">Daniel Patrick: </span>
               <a href="tel:+27818465237" class="hover:text-amber-600 transition-colors">+27 81 846 5237</a>
+            </p>
+            <p>
+              <span class="font-medium text-stone-800">Phivo Artimedes: </span>
+              <a href="tel:+27828196910" class="hover:text-amber-600 transition-colors">+27 82 819 6910</a>
+            </p>
+            <p>
+              <span class="font-medium text-stone-800">Ieuan Uys: </span>
+              <a href="tel:+27603888294" class="hover:text-amber-600 transition-colors">+27 60 388 8294</a>
             </p>
             <p>
               <a href="mailto:brothersrisingsa@gmail.com" class="hover:text-amber-600 transition-colors">brothersrisingsa@gmail.com</a>
