@@ -153,8 +153,8 @@ Arrive as you are, and leave with a deeper connection and relationship with your
 For bookings, questions, or further details, please get in touch with us directly.
 
 **Email:** brothersrisingsa@gmail.com
-**Phone:** 081 846 5237 | Daniel Patrick
-
+**Phone:** 
+081 846 5237 | Daniel Patrick
 060 388 8294 | Ieuan Uys
 082 819 6910 | Phivo Artimedes
 
