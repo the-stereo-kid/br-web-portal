@@ -7,8 +7,8 @@
   >
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 md:h-20">
-        <!-- Logo and Brand -->
-        <div class="flex items-center space-x-2">
+        <!-- Logo and Brand (home link) -->
+        <NuxtLink to="/" class="flex items-center space-x-2">
           <div class="flex flex-col">
             <span
               :class="[
@@ -27,22 +27,43 @@
               Mens Community
             </span>
           </div>
-        </div>
+        </NuxtLink>
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
-          <a
-            v-for="link in navLinks"
-            :key="link.href"
-            :href="link.href"
-            @click.prevent="scrollToSection(link.href)"
-            :class="[
-              'text-sm font-semibold uppercase tracking-wide transition-colors',
-              isScrolled ? 'text-stone-800 hover:text-amber-600' : 'text-white hover:text-amber-300'
-            ]"
-          >
-            {{ link.label }}
-          </a>
+          <template v-for="link in navLinks" :key="link.href">
+            <NuxtLink
+              v-if="link.path === '/retreat'"
+              :to="link.href"
+              :class="[
+                'text-sm font-semibold uppercase tracking-wide transition-colors',
+                isScrolled ? 'text-stone-800 hover:text-amber-600' : 'text-white hover:text-amber-300'
+              ]"
+            >
+              {{ link.label }}
+            </NuxtLink>
+            <NuxtLink
+              v-else-if="route.path === '/retreat'"
+              :to="'/' + link.href"
+              :class="[
+                'text-sm font-semibold uppercase tracking-wide transition-colors',
+                isScrolled ? 'text-stone-800 hover:text-amber-600' : 'text-white hover:text-amber-300'
+              ]"
+            >
+              {{ link.label }}
+            </NuxtLink>
+            <a
+              v-else
+              :href="link.href"
+              @click.prevent="scrollToSection(link.href)"
+              :class="[
+                'text-sm font-semibold uppercase tracking-wide transition-colors',
+                isScrolled ? 'text-stone-800 hover:text-amber-600' : 'text-white hover:text-amber-300'
+              ]"
+            >
+              {{ link.label }}
+            </a>
+          </template>
           <a
             href="https://chat.whatsapp.com/I8Ca17ugAqcClOyxCjJGMa"
             target="_blank"
@@ -54,7 +75,15 @@
           >
             WhatsApp Community
           </a>
+          <NuxtLink
+            v-if="route.path === '/retreat'"
+            to="/#contact"
+            class="px-4 py-2 bg-amber-600 text-white font-semibold uppercase text-sm tracking-wide rounded hover:bg-amber-700 transition-colors"
+          >
+            Contact
+          </NuxtLink>
           <button
+            v-else
             @click="scrollToSection('#contact')"
             class="px-4 py-2 bg-amber-600 text-white font-semibold uppercase text-sm tracking-wide rounded hover:bg-amber-700 transition-colors"
           >
@@ -106,20 +135,47 @@
         :class="isScrolled ? 'bg-white/95' : 'bg-stone-900/95'"
       >
         <div class="px-6 py-6 space-y-1">
-          <a
-            v-for="link in navLinks"
-            :key="link.href"
-            :href="link.href"
-            @click.prevent="scrollToSection(link.href); mobileMenuOpen = false"
-            :class="[
-              'block text-sm font-semibold uppercase tracking-wide py-3 px-4 rounded-lg transition-all duration-200',
-              isScrolled 
-                ? 'text-stone-800 hover:bg-amber-50 hover:text-amber-600' 
-                : 'text-white hover:bg-white/10 hover:text-amber-300'
-            ]"
-          >
-            {{ link.label }}
-          </a>
+          <template v-for="link in navLinks" :key="link.href">
+            <NuxtLink
+              v-if="link.path === '/retreat'"
+              :to="link.href"
+              @click="mobileMenuOpen = false"
+              :class="[
+                'block text-sm font-semibold uppercase tracking-wide py-3 px-4 rounded-lg transition-all duration-200',
+                isScrolled
+                  ? 'text-stone-800 hover:bg-amber-50 hover:text-amber-600'
+                  : 'text-white hover:bg-white/10 hover:text-amber-300'
+              ]"
+            >
+              {{ link.label }}
+            </NuxtLink>
+            <NuxtLink
+              v-else-if="route.path === '/retreat'"
+              :to="'/' + link.href"
+              @click="mobileMenuOpen = false"
+              :class="[
+                'block text-sm font-semibold uppercase tracking-wide py-3 px-4 rounded-lg transition-all duration-200',
+                isScrolled
+                  ? 'text-stone-800 hover:bg-amber-50 hover:text-amber-600'
+                  : 'text-white hover:bg-white/10 hover:text-amber-300'
+              ]"
+            >
+              {{ link.label }}
+            </NuxtLink>
+            <a
+              v-else
+              :href="link.href"
+              @click.prevent="scrollToSection(link.href); mobileMenuOpen = false"
+              :class="[
+                'block text-sm font-semibold uppercase tracking-wide py-3 px-4 rounded-lg transition-all duration-200',
+                isScrolled
+                  ? 'text-stone-800 hover:bg-amber-50 hover:text-amber-600'
+                  : 'text-white hover:bg-white/10 hover:text-amber-300'
+              ]"
+            >
+              {{ link.label }}
+            </a>
+          </template>
           <a
             href="https://chat.whatsapp.com/I8Ca17ugAqcClOyxCjJGMa"
             target="_blank"
@@ -127,15 +183,24 @@
             @click="mobileMenuOpen = false"
             :class="[
               'block text-sm font-semibold uppercase tracking-wide py-3 px-4 rounded-lg transition-all duration-200',
-              isScrolled 
-                ? 'text-stone-800 hover:bg-amber-50 hover:text-amber-600' 
+              isScrolled
+                ? 'text-stone-800 hover:bg-amber-50 hover:text-amber-600'
                 : 'text-white hover:bg-white/10 hover:text-amber-300'
             ]"
           >
             WhatsApp Community
           </a>
           <div class="pt-2">
+            <NuxtLink
+              v-if="route.path === '/retreat'"
+              to="/#contact"
+              @click="mobileMenuOpen = false"
+              class="block w-full text-center px-4 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold uppercase text-sm tracking-wide rounded-lg hover:from-amber-600 hover:to-amber-700 transition-all duration-200 shadow-md hover:shadow-lg"
+            >
+              Contact
+            </NuxtLink>
             <button
+              v-else
               @click="scrollToSection('#contact'); mobileMenuOpen = false"
               class="w-full px-4 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold uppercase text-sm tracking-wide rounded-lg hover:from-amber-600 hover:to-amber-700 transition-all duration-200 shadow-md hover:shadow-lg"
             >
@@ -149,13 +214,14 @@
 </template>
 
 <script setup lang="ts">
+const route = useRoute()
 const isScrolled = ref(false)
 const mobileMenuOpen = ref(false)
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Offerings', href: '#offerings' },
-  { label: 'About', href: '#about' }
+  { label: 'Home', href: '#home', path: '/' },
+  { label: 'Retreat', href: '/retreat', path: '/retreat' },
+  { label: 'About', href: '#about', path: '/' }
 ]
 
 const scrollToSection = (href: string) => {

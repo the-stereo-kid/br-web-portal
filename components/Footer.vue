@@ -1,14 +1,15 @@
 <template>
   <footer class="bg-white py-12 border-t border-stone-200">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- About Us -->
-        <div>
-          <h3 class="text-lg font-bold text-stone-800 mb-4">About Us</h3>
-          <p class="text-stone-600 text-sm">
-            <a href="#about" class="hover:text-amber-600 transition-colors">Our mission</a>
-          </p>
-        </div>
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- About Us -->
+          <div>
+            <h3 class="text-lg font-bold text-stone-800 mb-4">About Us</h3>
+            <p class="text-stone-600 text-sm">
+              <NuxtLink to="/#about" class="hover:text-amber-600 transition-colors">Our mission</NuxtLink>
+            </p>
+          </div>
 
         <!-- Retreat -->
         <div>
@@ -34,6 +35,7 @@
           >
           <img src="/logos/Instagram_Glyph_Black.svg" alt="Instagram" class="w-5 h-5 object-contain" />
           </a>
+        </div>
         </div>
       </div>
     </div>

@@ -65,27 +65,11 @@
       <p class="text-base sm:text-xl md:text-2xl text-white mb-6 sm:mb-8 font-serif italic">
         Join us as a stranger. Leave as a brother.
       </p>
-
-      <!-- CTA Button -->
-      <button
-        @click="scrollToOfferings"
-        class="px-8 py-3 bg-amber-600 text-white font-semibold uppercase text-sm tracking-wide rounded hover:bg-amber-700 transition-colors shadow-lg"
-      >
-        Learn More
-      </button>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-// Set hero banner image directly
 const heroImage = '/images/brothers-rising-nature-circle-unity-banner.jpg'
 const logoImage = '/images/BR_logo_transparent_bg.png'
-
-const scrollToOfferings = () => {
-  const element = document.getElementById('offerings')
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
-}
 </script>

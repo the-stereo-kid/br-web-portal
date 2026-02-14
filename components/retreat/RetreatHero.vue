@@ -23,22 +23,13 @@
       <p class="text-lg sm:text-xl md:text-2xl text-white/95 font-serif mb-6 sm:mb-8 max-w-3xl mx-auto">
         Step Out of the Noise. Return to Yourself. Rise with Your Brothers.
       </p>
-      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-        <button
-          type="button"
-          @click="scrollToSection('retreat-cta')"
-          class="w-full sm:w-auto min-h-[44px] px-8 py-3 bg-amber-600 text-white font-semibold uppercase text-sm tracking-wide rounded hover:bg-amber-700 transition-colors shadow-lg"
-        >
-          Secure Your Place
-        </button>
-        <button
-          type="button"
-          @click="scrollToSection('retreat-opening')"
-          class="w-full sm:w-auto min-h-[44px] px-8 py-3 border-2 border-white text-white font-semibold uppercase text-sm tracking-wide rounded hover:bg-white/10 transition-colors"
-        >
-          Learn More
-        </button>
-      </div>
+      <button
+        type="button"
+        @click="scrollToSection('retreat-cta')"
+        class="min-h-[44px] px-8 py-3 bg-amber-600 text-white font-semibold uppercase text-sm tracking-wide rounded hover:bg-amber-700 transition-colors shadow-lg"
+      >
+        Secure Your Place
+      </button>
     </div>
   </section>
 </template>
