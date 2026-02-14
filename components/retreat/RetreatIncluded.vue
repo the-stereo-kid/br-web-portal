@@ -31,7 +31,7 @@
 
 <script setup lang="ts">
 const included = [
-  "2 nights' accommodation in shared glamping-style bell tents",
+  "2 nights' accommodation in shared luxurious bell tents",
   'All organic, nourishing, and deliciously fresh meals and refreshments throughout the retreat',
   'Full facilitation of all workshops, circles, and practices by three experienced facilitators',
   'Guided hikes, ceremonies, and experiential sessions',
