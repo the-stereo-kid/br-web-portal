@@ -27,7 +27,7 @@
             Nestled in nature, <strong class="text-stone-800">Waterfall Farm</strong> offers a powerful setting for retreat work — combining comfort, simplicity, and connection to the land.
           </p>
           <p class="text-lg text-stone-600 leading-relaxed mb-6">
-            Accommodation will be in <strong class="text-stone-800">shared glamping-style bell tents</strong> — beautifully appointed spaces that allow for both rest and a sense of communal living that supports the retreat container.
+            Accommodation will be in <strong class="text-stone-800">shared bell tents</strong> — beautifully appointed spaces that allow for both rest and a sense of communal living that supports the retreat container.
           </p>
           <p class="text-lg text-stone-600 leading-relaxed mb-6">
             Each tent sleeps 2 people, creating the opportunity to build stronger bonds with your brothers.
@@ -44,7 +44,7 @@
 <script setup lang="ts">
 const locationImages = [
   { src: '/images/BR_Retreat_x_Waterfall_Farm/WF_1-the_waterfall.jpg', alt: 'The waterfall at Waterfall Farm — natural pool and rock formations' },
-  { src: '/images/BR_Retreat_x_Waterfall_Farm/bell_tent.jpg', alt: 'Glamping-style bell tent interior at Waterfall Farm' },
+  { src: '/images/BR_Retreat_x_Waterfall_Farm/bell_tent.jpg', alt: 'luxurious bell tent interior at Waterfall Farm' },
   { src: '/images/BR_Retreat_x_Waterfall_Farm/WF_4-lit_up_tent.jpg', alt: 'Bell tent lit up at night at Waterfall Farm' }
 ]
 </script>

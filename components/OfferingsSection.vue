@@ -211,10 +211,10 @@
         <h3 class="text-xl sm:text-2xl font-serif font-bold text-stone-800 mb-6 text-center">
           Featured
         </h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="flex flex-wrap justify-center gap-6">
           <NuxtLink
             to="/retreat"
-            class="block bg-stone-50 rounded-xl p-6 border border-stone-200 shadow-sm hover:shadow-md hover:border-amber-200 transition-all duration-200 text-center group"
+            class="block w-full max-w-sm bg-stone-50 rounded-xl p-6 border border-stone-200 shadow-sm hover:shadow-md hover:border-amber-200 transition-all duration-200 text-center group"
           >
             <div class="mb-4 flex justify-center">
               <div class="w-16 h-16 flex items-center justify-center text-amber-600">

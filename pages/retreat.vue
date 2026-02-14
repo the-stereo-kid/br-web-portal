@@ -5,13 +5,13 @@
     <RetreatOpening />
     <RetreatWhy />
     <RetreatWhoFor />
+    <RetreatInvitation />
     <RetreatPillars />
     <RetreatExperience />
     <RetreatLocation />
-    <RetreatIncluded />
     <RetreatDetails />
+    <RetreatIncluded />
     <RetreatValue />
-    <RetreatInvitation />
     <RetreatCTA />
     <Footer />
   </div>

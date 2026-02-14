@@ -88,6 +88,86 @@ We mention "post-retreat integration support" in the marketing — what does thi
 
 ---
 
+## **Technical Setup: Booking, Payments & MailerLite**
+
+**Status:** Action Required (manual setup in MailerLite and Yoco dashboards)
+
+**Purpose:** When someone pays for the retreat via the website, their details are added to MailerLite and they receive an automated "Thanks, you're booked" confirmation email. No code changes needed — the webhook is already in place. Complete these steps to activate the flow.
+
+### 1. MailerLite Custom Fields
+
+Create these custom fields in MailerLite (Settings > Custom fields):
+
+| Field Key | Type | Purpose |
+|-----------|------|---------|
+| `payment_type` | Text | "full" or "deposit" |
+| `dietary_requirements` | Text | Optional dietary info from booking form |
+| `source` | Text | "retreat_booking" (already used by contact form) |
+| `phone` | Text | If not already a default field in your account |
+
+Default fields `name`, `last_name`, `email` are typically available.
+
+### 2. MailerLite Retreat Group (Optional)
+
+- In MailerLite: Create group named "Retreat Bookings" (or similar)
+- Copy the group ID
+- Add `MAILERLITE_RETREAT_GROUP_ID=<id>` to `.env` (optional — if omitted, bookers go to main group)
+
+### 3. Yoco Webhook Registration
+
+- Log in to Yoco merchant dashboard
+- Go to Developer / Webhooks / Integrations
+- Add webhook URL: `https://yourdomain.com/api/payment/webhook` (use production domain)
+- For local testing: use ngrok tunnel, e.g. `https://abc123.ngrok.io/api/payment/webhook`
+
+### 4. MailerLite Automation: Booking Confirmation
+
+- In MailerLite: Automations > Create automation
+- **Trigger:** "Subscriber joins group" > select Retreat Bookings group (or main group if not using separate group)
+- **Action:** Send email
+- **Email content:** Simple "Thanks, you're booked" message with merge tags:
+  - Subject: e.g. "You're booked — Brothers Rising Retreat"
+  - Body: Thank {name}, confirm dates (13–15 March), location (Waterfall Farm), and next steps
+- **Merge tags to use:** `{name}`, `{last_name}`, `{email}`, `{phone}`, `{payment_type}`, `{dietary_requirements}`
+
+### 5. Sample Confirmation Email Copy
+
+Use this as a starting point for the automation email:
+
+**Subject:** You're booked — Brothers Rising Conscious Men's Retreat
+
+**Body:**
+
+Hi {name},
+
+Thanks — you're booked for the Brothers Rising Conscious Men's Retreat.
+
+**Retreat details:**
+- **Dates:** 13–15 March
+- **Location:** Waterfall Farm
+- **Investment:** R6,000 (all-inclusive)
+
+**What happens next:**
+We'll be in touch with a preparation guide and further details closer to the retreat. If you have any questions before then, reach out to us.
+
+**Contact:**
+brothersrisingsa@gmail.com | 081 846 5237 (Daniel) | 060 388 8294 (Ieuan) | 082 819 6910 (Phivo)
+
+Looking forward to sharing the weekend with you.
+
+— Brothers Rising
+
+### 6. Checklist Summary
+
+- [ ] Create MailerLite custom fields
+- [ ] Create Retreat Bookings group (optional)
+- [ ] Add MAILERLITE_RETREAT_GROUP_ID to .env if using separate group
+- [ ] Register Yoco webhook URL
+- [ ] Create MailerLite automation (trigger + email)
+- [ ] Test end-to-end with Yoco test payment
+
+---
+
 ## **Marketing & Social Proof**
 
 ### 5. Testimonials & Feedback
