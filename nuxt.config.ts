@@ -23,6 +23,9 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'description', content: 'Creating A Community Of Strong, Healthy & Happy Men' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/iamges/logos/BR_logo_transparent_bg.png' }
       ]
     }
   }
