@@ -22,10 +22,11 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Creating A Community Of Strong, Healthy & Happy Men' }
+        { name: 'description', content: 'Creating A Community Of Strong, Healthy & Happy Men' },
+        { name: 'theme-color', content: '#292524' }
       ],
       link: [
-        { rel: 'icon', type: 'image/png', href: '/iamges/logos/BR_logo_transparent_bg.png' }
+        { rel: 'icon', type: 'image/jpeg', href: '/logos/BR_logo_no_text.jpeg' }
       ]
     }
   }
