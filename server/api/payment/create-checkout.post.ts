@@ -67,10 +67,12 @@ export default defineEventHandler(async (event) => {
 
     return { redirectUrl: response.redirectUrl }
   } catch (err: any) {
-    console.error('Yoco API error:', err)
+    const yocoMessage = err.data?.message ?? err.data?.error ?? (typeof err.data === 'string' ? err.data : null)
+    const detail = yocoMessage || err.message || 'Failed to create checkout'
+    console.error('Yoco API error:', err.statusCode, err.data ?? err.message)
     throw createError({
       statusCode: err.statusCode || 500,
-      message: err.data?.message || err.message || 'Failed to create checkout'
+      message: detail
     })
   }
 })
