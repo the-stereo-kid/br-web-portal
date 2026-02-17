@@ -1,16 +1,16 @@
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
-  const { firstName, lastName, email } = body
+  const { email } = body
 
-  if (!firstName || !lastName || !email) {
+  if (!email) {
     throw createError({
       statusCode: 400,
-      message: 'First name, last name, and email are required'
+      message: 'Email is required'
     })
   }
 
   const apiKey = useRuntimeConfig().mailerLiteApiKey
-  const groupId = useRuntimeConfig().mailerLiteGroupId
+  const groupId = useRuntimeConfig().mailerLiteNewsletterGroup
 
   if (!apiKey || !groupId) {
     throw createError({
@@ -28,12 +28,7 @@ export default defineEventHandler(async (event) => {
       },
       body: {
         email,
-        name: `${firstName} ${lastName}`,
-        groups: [groupId],
-        fields: {
-          name: firstName,
-          last_name: lastName
-        }
+        groups: [groupId]
       }
     })
 

@@ -24,8 +24,8 @@ export default defineEventHandler(async (event) => {
 
     const config = useRuntimeConfig()
     const apiKey = config.mailerLiteApiKey
-    const mainGroupId = config.mailerLiteGroupId
-    const retreatGroupId = config.mailerLiteRetreatGroupId
+    const mainGroupId = config.mailerLiteNewsletterGroup
+    const retreatGroupId = config.mailerLiteRetreatGroup
     const groupId = retreatGroupId || mainGroupId
 
     if (!apiKey || !groupId) {
