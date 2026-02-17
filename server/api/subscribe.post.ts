@@ -20,11 +20,11 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
-    const response = await $fetch('https://api.mailerlite.com/api/v2/subscribers', {
+    const response = await $fetch('https://connect.mailerlite.com/api/subscribers', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-MailerLite-ApiKey': apiKey
+        'Authorization': `Bearer ${apiKey}`
       },
       body: {
         email,
