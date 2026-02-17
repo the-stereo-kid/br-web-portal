@@ -111,7 +111,7 @@ Default fields `name`, `last_name`, `email` are typically available.
 
 - In MailerLite: Create group named "Retreat Bookings" (or similar)
 - Copy the group ID
-- Add `MAILERLITE_RETREAT_GROUP_ID=<id>` to `.env` (optional — if omitted, bookers go to main group)
+- Add `MAILERLITE_RETREAT_GROUP=<id>` to `.env` (optional — if omitted, bookers go to newsletter group)
 
 ### 3. Yoco Webhook Registration
 
@@ -161,7 +161,7 @@ Looking forward to sharing the weekend with you.
 
 - [ ] Create MailerLite custom fields
 - [ ] Create Retreat Bookings group (optional)
-- [ ] Add MAILERLITE_RETREAT_GROUP_ID to .env if using separate group
+- [ ] Add MAILERLITE_RETREAT_GROUP to .env if using separate group
 - [ ] Register Yoco webhook URL
 - [ ] Create MailerLite automation (trigger + email)
 - [ ] Test end-to-end with Yoco test payment

@@ -33,7 +33,7 @@ npm install
 2. Create a `.env` file in the root directory:
 ```env
 MAILERLITE_API_KEY=your_mailerlite_api_key
-MAILERLITE_GROUP_ID=your_newsletter_group_id
+MAILERLITE_NEWSLETTER_GROUP=your_newsletter_group_id
 ```
 
 3. Start the development server:
