@@ -24,9 +24,9 @@ export default defineEventHandler(async (event) => {
 
     const config = useRuntimeConfig()
     const apiKey = config.mailerLiteApiKey
-    const mainGroupId = config.mailerLiteGroupId
-    const retreatGroupId = config.mailerLiteRetreatGroupId
-    const groupId = retreatGroupId || mainGroupId
+    const newsletterGroupId = config.mailerLiteNewsletterGroup
+    const retreatGroupId = config.mailerLiteRetreatGroup
+    const groupId = retreatGroupId || newsletterGroupId
 
     if (!apiKey || !groupId) {
       console.error('Webhook: MailerLite configuration missing')
@@ -36,28 +36,25 @@ export default defineEventHandler(async (event) => {
       })
     }
 
+    // Fields must match MailerLite Subscribers → Fields. Omit 'source' (reserved).
     const fields: Record<string, string> = {
       name: firstName,
       last_name: lastName,
-      phone,
+      phone: phone || '',
       payment_type: paymentType,
-      source: 'retreat_booking'
-    }
-    if (dietaryRequirements) {
-      fields.dietary_requirements = dietaryRequirements
+      dietary_requirements: dietaryRequirements
     }
 
-    await $fetch('https://api.mailerlite.com/api/v2/subscribers', {
+    await $fetch('https://connect.mailerlite.com/api/subscribers', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-MailerLite-ApiKey': apiKey
+        'Authorization': `Bearer ${apiKey}`
       },
       body: {
         email,
-        name: `${firstName} ${lastName}`.trim() || email,
-        groups: [groupId],
-        fields
+        fields,
+        groups: [groupId]
       }
     })
 
@@ -69,7 +66,12 @@ export default defineEventHandler(async (event) => {
       console.error('Webhook: subscriber already exists, skipping MailerLite add')
       return { received: true }
     }
-    console.error('Webhook processing error:', err)
+    // Log full MailerLite response for debugging 422/validation errors
+    console.error('Webhook MailerLite error:', {
+      statusCode: err?.statusCode,
+      message: err?.message,
+      mailerLiteResponse: err?.data
+    })
     throw createError({
       statusCode: err.statusCode || 500,
       message: err.message || 'Failed to process webhook'

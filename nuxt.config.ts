@@ -5,8 +5,8 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   runtimeConfig: {
     mailerLiteApiKey: process.env.MAILERLITE_API_KEY,
-    mailerLiteGroupId: process.env.MAILERLITE_GROUP_ID,
-    mailerLiteRetreatGroupId: process.env.MAILERLITE_RETREAT_GROUP_ID,
+    mailerLiteNewsletterGroup: process.env.MAILERLITE_NEWSLETTER_GROUP,
+    mailerLiteRetreatGroup: process.env.MAILERLITE_RETREAT_GROUP,
     yocoSecretKey: process.env.YOCO_SECRET_KEY,
     public: {
       yocoPublicKey: process.env.YOCO_PUBLIC_KEY,
