@@ -9,7 +9,7 @@
           <dl class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 text-stone-200">
             <div>
               <dt class="text-amber-200 text-sm font-semibold uppercase tracking-wide mb-1">Dates</dt>
-              <dd class="text-lg">13–15 March</dd>
+              <dd class="text-lg">TBC</dd>
             </div>
             <div>
               <dt class="text-amber-200 text-sm font-semibold uppercase tracking-wide mb-1">Duration</dt>

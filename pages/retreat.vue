@@ -12,7 +12,7 @@
     <RetreatDetails />
     <RetreatIncluded />
     <RetreatValue />
-    <RetreatCTA />
+    <RetreatCTAPostponed />
     <Footer />
   </div>
 </template>
@@ -24,7 +24,7 @@ useHead({
     {
       name: 'description',
       content:
-        "Brothers Rising Conscious Men's Retreat — 13–15 March at Waterfall Farm. A 2-night immersive experience for men ready to slow down, reconnect, and do meaningful inner work in a grounded, supportive environment."
+        "Brothers Rising Conscious Men's Retreat — dates TBC at Waterfall Farm. A 2-night immersive experience for men ready to slow down, reconnect, and do meaningful inner work in a grounded, supportive environment."
     }
   ]
 })
