@@ -6,7 +6,8 @@
           Extraordinary Value
         </h2>
         <p class="text-lg sm:text-xl text-stone-700 leading-relaxed">
-          For <strong class="text-stone-900">R6,000</strong>, you receive a full weekend of guided facilitation, nourishing meals, comfortable accommodation, and transformative experiences in nature. This retreat offers exceptional value for men committed to their growth and willing to invest in themselves.
+          <!-- For <strong class="text-stone-900">R6,000</strong>,  -->
+          You receive a full weekend of guided facilitation, nourishing meals, comfortable accommodation, and transformative experiences in nature. This retreat offers exceptional value for men committed to their growth and willing to invest in themselves.
         </p>
       </div>
     </div>

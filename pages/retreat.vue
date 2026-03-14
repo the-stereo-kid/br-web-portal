@@ -9,7 +9,7 @@
     <RetreatPillars />
     <RetreatExperience />
     <RetreatLocation />
-    <RetreatDetails />
+    <!-- <RetreatDetails /> -->
     <RetreatIncluded />
     <RetreatValue />
     <RetreatCTAPostponed />
