@@ -6,7 +6,7 @@
           What's Included
         </h2>
         <p class="text-2xl sm:text-3xl font-serif font-bold text-golden-brown text-center mb-10">
-          All-inclusive retreat investment of R6,000
+          All-inclusive retreat investment - TBC
         </p>
         <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
           <li

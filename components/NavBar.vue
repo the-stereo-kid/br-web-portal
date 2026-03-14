@@ -43,7 +43,17 @@
               {{ link.label }}
             </NuxtLink>
             <NuxtLink
-              v-else-if="route.path === '/retreat'"
+              v-else-if="route.path !== '/' && link.label === 'Home'"
+              to="/"
+              :class="[
+                'text-sm font-semibold uppercase tracking-wide transition-colors',
+                isScrolled ? 'text-stone-800 hover:text-amber-600' : 'text-white hover:text-amber-300'
+              ]"
+            >
+              {{ link.label }}
+            </NuxtLink>
+            <NuxtLink
+              v-else-if="route.path !== '/' && link.href.startsWith('#')"
               :to="'/' + link.href"
               :class="[
                 'text-sm font-semibold uppercase tracking-wide transition-colors',
@@ -76,7 +86,7 @@
             WhatsApp Community
           </a>
           <NuxtLink
-            v-if="route.path === '/retreat'"
+            v-if="route.path !== '/'"
             to="/#contact"
             class="px-4 py-2 bg-amber-600 text-white font-semibold uppercase text-sm tracking-wide rounded hover:bg-amber-700 transition-colors"
           >
@@ -150,7 +160,20 @@
               {{ link.label }}
             </NuxtLink>
             <NuxtLink
-              v-else-if="route.path === '/retreat'"
+              v-else-if="route.path !== '/' && link.label === 'Home'"
+              to="/"
+              @click="mobileMenuOpen = false"
+              :class="[
+                'block text-sm font-semibold uppercase tracking-wide py-3 px-4 rounded-lg transition-all duration-200',
+                isScrolled
+                  ? 'text-stone-800 hover:bg-amber-50 hover:text-amber-600'
+                  : 'text-white hover:bg-white/10 hover:text-amber-300'
+              ]"
+            >
+              {{ link.label }}
+            </NuxtLink>
+            <NuxtLink
+              v-else-if="route.path !== '/' && link.href.startsWith('#')"
               :to="'/' + link.href"
               @click="mobileMenuOpen = false"
               :class="[
@@ -192,7 +215,7 @@
           </a>
           <div class="pt-2">
             <NuxtLink
-              v-if="route.path === '/retreat'"
+              v-if="route.path !== '/'"
               to="/#contact"
               @click="mobileMenuOpen = false"
               class="block w-full text-center px-4 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold uppercase text-sm tracking-wide rounded-lg hover:from-amber-600 hover:to-amber-700 transition-all duration-200 shadow-md hover:shadow-lg"

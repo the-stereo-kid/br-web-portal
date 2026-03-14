@@ -55,11 +55,13 @@ const pillars = [
       },
       {
         heading: 'Inner Warrior Work',
-        body: 'Reconnecting with the Warrior Archetype — healthy masculine strength, boundaries, courage, and self-leadership. This process allows participants to step into their full embodied conscious warrior self.'
+        body: 'Reconnecting with the Warrior Archetype — healthy masculine decisiveness'
+        // , boundaries, courage, and self-leadership. This process allows participants to step into their full embodied conscious warrior self.'
       },
       {
         heading: 'Inner Child Work',
-        body: 'Guided flows and prompts that create space to reconnect with your younger self with curiosity, care, and healing attention. Playful but held experiences to help you connect with your inner child and allow space for old wounds to be felt and nurtured.'
+        body: 'Guided flows that create space to reconnect with your vulnerable self with curiosity, care, and healing attention.'
+        // Playful but held experiences to help you connect with your inner child and allow space for old wounds to be felt and nurtured.'
       }
     ]
   },
@@ -69,6 +71,10 @@ const pillars = [
       {
         heading: 'Reconnection to Nature',
         body: 'Grounding experiences that restore our relationship with the natural world as a source of wisdom, reflection, and support.'
+      },
+      {
+        heading: 'Meeting the edge',
+        body: 'Exploring the boundaries of your comfort zone through challenges and adventure.'
       }
     ]
   }
