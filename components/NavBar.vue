@@ -33,7 +33,7 @@
         <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
           <template v-for="link in navLinks" :key="link.href">
             <NuxtLink
-              v-if="link.path === '/retreat'"
+              v-if="link.href.startsWith('/')"
               :to="link.href"
               :class="[
                 'text-sm font-semibold uppercase tracking-wide transition-colors',
@@ -147,7 +147,7 @@
         <div class="px-6 py-6 space-y-1">
           <template v-for="link in navLinks" :key="link.href">
             <NuxtLink
-              v-if="link.path === '/retreat'"
+              v-if="link.href.startsWith('/')"
               :to="link.href"
               @click="mobileMenuOpen = false"
               :class="[
@@ -238,11 +238,13 @@
 
 <script setup lang="ts">
 const route = useRoute()
-const isScrolled = ref(false)
+const props = defineProps<{ solid?: boolean }>() // solid: for pages with no dark hero behind the bar
+const isScrolled = ref(!!props.solid)
 const mobileMenuOpen = ref(false)
 
 const navLinks = [
   { label: 'Home', href: '#home', path: '/' },
+  { label: 'Events', href: '/events', path: '/events' },
   { label: 'Retreat', href: '/retreat', path: '/retreat' },
   { label: 'About', href: '#about', path: '/' }
 ]
@@ -257,7 +259,7 @@ const scrollToSection = (href: string) => {
 
 onMounted(() => {
   const handleScroll = () => {
-    isScrolled.value = window.scrollY > 50
+    isScrolled.value = !!props.solid || window.scrollY > 50
   }
   window.addEventListener('scroll', handleScroll)
   onUnmounted(() => {

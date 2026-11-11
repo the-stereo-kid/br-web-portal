@@ -1,5 +1,6 @@
 export default defineEventHandler(async (event) => {
-  const body = await readBody(event)
+  // Rejects anything not signed by Yoco (401) before any work is done.
+  const body = await readVerifiedWebhook(event)
 
   try {
     const eventType = body?.type
@@ -7,6 +8,22 @@ export default defineEventHandler(async (event) => {
     const metadata = payload?.metadata
 
     if (eventType !== 'payment.succeeded') {
+      return { received: true }
+    }
+
+    // Event ticket order (created by /api/events/<slug>/book). Anything without an orderId is a retreat booking.
+    if (metadata?.orderId) {
+      // ponytail: a payment that lands after its 15-minute hold lapsed is still honoured, so a tier can
+      // oversell by that order in a rare race. Refund from the Yoco dashboard if it ever matters.
+      const [order] = await useDb()`
+        update orders set status = 'paid'
+        where id = ${Number(metadata.orderId) || 0} and amount_cents = ${Number(payload?.amount) || 0} and status in ('held', 'paid')
+        returning id`
+      if (!order) {
+        console.error('Webhook: no matching order for payment', { orderId: metadata.orderId, amount: payload?.amount })
+        return { received: true }
+      }
+      await sendConfirmation(order.id) // throws on failure so Yoco retries
       return { received: true }
     }
 

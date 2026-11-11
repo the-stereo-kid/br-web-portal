@@ -1,6 +1,6 @@
 # Events calendar, event pages and ticket confirmations
 
-Technical document. Agreed 2026-11-11. Status: requirements settled, nothing built yet.
+Technical document. Agreed 2026-11-11. Status: built on the `events-calendar` branch and checked against a local test database. Not yet run against the real database, Yoco, Resend or Vercel Blob.
 
 Mockups: https://claude.ai/artifact/WvMhNLkdkEofTgjQ4d16kK (private link; board B, parchment, is the chosen skin).
 
@@ -115,7 +115,8 @@ Mockups: https://claude.ai/artifact/WvMhNLkdkEofTgjQ4d16kK (private link; board 
 | Images | Vercel Blob | Same platform, served from Vercel's CDN |
 | Email | Resend | Simple transactional API; DNS records sit on a subdomain and do not disturb the iCloud mailbox |
 | Payments | Yoco (existing) | Already integrated; Paystack later |
-| Calendar | FullCalendar with its Vue 3 component | Month, week and list views built in; styled with plain CSS |
+| Calendar | FullCalendar v7 (`@fullcalendar/vue3`, classic theme) | Month, week and list views built in; recoloured through its palette variables |
+| Database driver | `postgres` (postgres.js) | Works with Neon's pooled URL and with a local Postgres for testing |
 | Admin sessions | Nuxt's built-in sealed-cookie sessions | No extra dependency |
 | Calendar feed | Hand-written `.ics` output | About 30 lines; no library needed |
 
@@ -130,11 +131,11 @@ events        id, slug, title, status (draft | published),
               external_url, sold_out (manual override), created_at
 ticket_tiers  id, event_id, name, price_cents, quantity, sales_end, sort
 orders        id, event_id, tier_id, quantity, name, email, phone, amount_cents,
-              status (held | paid | rsvp | expired), hold_expires_at,
+              status (held | paid | rsvp), hold_expires_at,
               checkout_id, confirmation_sent_at, created_at
-admins        email
-login_tokens  token_hash, email, expires_at
 ```
+
+The schema is `server/db/schema.sql`. Admins are the `ADMIN_EMAILS` list, and sign-in links are signed tokens, so neither needs a table.
 
 - `blocks` is an ordered array of `{ type, data }`. The page renders them in order through a type-to-component map (EVT-4).
 - Spots left on a tier = `quantity` minus paid orders minus unexpired holds. Expired holds are ignored by the query, so no scheduled job is needed (TIX-4).
@@ -177,8 +178,27 @@ One small test file for the money path: tier selection, spots-left arithmetic an
 
 ## 8. Setup the site owner must do
 
-- Add Neon and Blob to the Vercel project.
-- Create the Resend account and add its DNS records for `brothersrising.com`.
-- Make sure `hello@brothersrising.com` exists as a mailbox so replies land somewhere.
-- Copy the Yoco webhook secret into Vercel.
-- Supply the list of admin email addresses.
+1. In Vercel, add **Neon** (Storage → Postgres) and a **Blob** store to the project. They set `DATABASE_URL` and `BLOB_READ_WRITE_TOKEN`. `DATABASE_URL` must be the pooled connection string.
+2. In the Neon SQL editor, run `server/db/schema.sql`, then `server/db/seed-pamoja.sql` for the test page.
+3. Create a Resend account, add the DNS records it gives for `brothersrising.com`, and set `RESEND_API_KEY`.
+4. Make sure `hello@brothersrising.com` exists as a mailbox so replies land somewhere.
+5. Set `ADMIN_EMAILS` (comma-separated) and `SESSION_PASSWORD` (any random string of 32 or more characters).
+6. Set `SITE_URL` to `https://www.brothersrising.com`.
+7. Yoco: the webhook secret (`whsec_...`) is shown only once, when the webhook is registered. If it was not kept, register the webhook again (`POST https://payments.yoco.com/api/webhooks` with the URL `<site>/api/payment/webhook`) and set `YOCO_WEBHOOK_SECRET`. Until it is set, every webhook is rejected, including retreat bookings.
+8. Optional: set `MAILERLITE_EVENTS_GROUP` to add bookers to a MailerLite group.
+
+All variables are listed in `.env.example`.
+
+## 9. Where things are
+
+| Path | What |
+|---|---|
+| `server/db/` | Schema and the Pamoja seed |
+| `server/utils/booking.ts` | Tier selection, webhook signature, sign-in token, calendar feed (pure, tested) |
+| `server/utils/payments.ts` | Every Yoco call |
+| `server/utils/events.ts` | Event loading and the confirmation email |
+| `server/api/events/`, `server/routes/calendar.ics.ts` | Public API and feed |
+| `server/api/admin/`, `server/api/auth/`, `server/middleware/admin.ts` | Admin API, sign-in, guard |
+| `components/event/`, `utils/eventBlocks.ts` | Template blocks |
+| `pages/events/`, `pages/admin/` | Pages |
+| `tests/booking.test.ts` | `npm test` |
