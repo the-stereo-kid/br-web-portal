@@ -16,7 +16,12 @@ export default defineNuxtConfig({
     mailerLiteEventsGroup: process.env.MAILERLITE_EVENTS_GROUP,
     public: {
       yocoPublicKey: process.env.YOCO_PUBLIC_KEY,
-      siteUrl: process.env.SITE_URL || 'http://localhost:3000'
+      // Preview deployments link to themselves (Vercel sets these at build time), so sign-in links and
+      // payment redirects stay on the preview instead of jumping to production.
+      siteUrl:
+        process.env.VERCEL_ENV === 'preview'
+          ? `https://${process.env.VERCEL_BRANCH_URL || process.env.VERCEL_URL}`
+          : process.env.SITE_URL || 'http://localhost:3000'
     }
   },
   app: {
